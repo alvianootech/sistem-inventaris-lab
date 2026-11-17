@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS barang (
 
 INSERT INTO barang (kode_barang, nama_barang, jumlah, spesifikasi, kondisi, lokasi_ruang)
 VALUES
-('0045-LAB1', 'Laptop ASUS', 10, 'RAM 8GB, SSD 256GB', 'Baik', 'Lab RPL 1'),
-('0046-LAB1', 'Keyboard Logitech', 15, 'Keyboard USB', 'Rusak', 'Lab RPL 2'),
-('0048-LAB1', 'Monitor LG', 5, 'Monitor LED 24 inci', 'Baik', 'Lab RPL 1'),
-('0049-LAB1', 'Printer Epson', 3, 'Printer Ink Tank', 'Rusak', 'Ruang Guru');
+('0045', 'Laptop ASUS', 10, 'RAM 8GB, SSD 256GB', 'Baik', 'Lab RPL 1'),
+('0046', 'Keyboard Logitech', 15, 'Keyboard USB', 'Rusak', 'Lab RPL 2'),
+('0048', 'Monitor LG', 5, 'Monitor LED 24 inci', 'Baik', 'Lab RPL 1'),
+('0049', 'Printer Epson', 3, 'Printer Ink Tank', 'Rusak', 'Ruang Guru');
