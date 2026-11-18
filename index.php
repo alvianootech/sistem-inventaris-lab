@@ -26,11 +26,12 @@ if (isset($_GET['cari'])) {
     <form action="" method="get">
         <input type="text" name="cari" placeholder="Cari barang">
         <button type="submit">Cari</button>
-        <a href="index.php">Kembali</a>
+        <a href="index.php">Reset</a>
     </form>
-    <br>
+    <br><br>
 
-    <a href="tambah.php">+ Tambah Barang</a>
+    <a href="tambah.php">+ Tambah Barang</a> |
+    <a href="crud_lokasi/index.php">Manajemen Lokasi Ruang</a>
     <br><br>
 
     <?php if (isset($_GET['pesan'])) { ?>

@@ -1,5 +1,6 @@
 <?php
 include "koneksi.php";
+$daftar_lokasi = mysqli_query($koneksi, "SELECT nama_lokasi FROM lokasi ORDER BY nama_lokasi");
 
 if (isset ($_POST['simpan'])) {
     $kode_barang = $_POST['kode_barang'];
@@ -51,11 +52,9 @@ if (isset ($_POST['simpan'])) {
         <label>Lokasi Ruang:</label><br>
         <select name="lokasi_ruang" required>
             <option value="">-- Pilih Lokasi Ruang --</option>
-            <option value="Lab RPL 1">Lab RPL 1</option>
-            <option value="Lab RPL 2">Lab RPL 2</option>
-            <option value="Ruang Guru">Ruang Guru</option>
-            <option value="Perpustakaan">Perpustakaan</option>
-            <option value="Gudang">Gudang</option>
+            <?php while ($lokasi = mysqli_fetch_assoc($daftar_lokasi)) { ?>
+                <option value="<?php echo htmlspecialchars($lokasi['nama_lokasi']); ?>"><?php echo htmlspecialchars($lokasi['nama_lokasi']); ?></option>
+            <?php } ?>
         </select><br><br>
 
         <button type="submit" name="simpan">Simpan</button>

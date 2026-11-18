@@ -4,6 +4,7 @@ include "koneksi.php";
 $id = $_GET['id'];
 $ambil = mysqli_query($koneksi, "SELECT * FROM barang WHERE id = '$id'");
 $data = mysqli_fetch_assoc($ambil);
+$daftar_lokasi = mysqli_query($koneksi, "SELECT nama_lokasi FROM lokasi ORDER BY nama_lokasi");
 
 if (isset ($_POST['update'])) {
     $kode_barang = $_POST['kode_barang'];
@@ -61,11 +62,9 @@ if (isset ($_POST['update'])) {
         <label>Lokasi Ruang:</label><br>
         <select name="lokasi_ruang" required>
             <option value="">-- Pilih Lokasi Ruang --</option>
-            <option value="Lab RPL 1" <?php if ($data['lokasi_ruang'] == 'Lab RPL 1') echo 'selected'; ?>>Lab RPL 1</option>
-            <option value="Lab RPL 2" <?php if ($data['lokasi_ruang'] == 'Lab RPL 2') echo 'selected'; ?>>Lab RPL 2</option>
-            <option value="Ruang Guru" <?php if ($data['lokasi_ruang'] == 'Ruang Guru') echo 'selected'; ?>>Ruang Guru</option>
-            <option value="Perpustakaan" <?php if ($data['lokasi_ruang'] == 'Perpustakaan') echo 'selected'; ?>>Perpustakaan</option>
-            <option value="Gudang" <?php if ($data['lokasi_ruang'] == 'Gudang') echo 'selected'; ?>>Gudang</option>
+            <?php while ($lokasi = mysqli_fetch_assoc($daftar_lokasi)) { ?>
+                <option value="<?php echo htmlspecialchars($lokasi['nama_lokasi']); ?>" <?php if ($data['lokasi_ruang'] == $lokasi['nama_lokasi']) echo 'selected'; ?>><?php echo htmlspecialchars($lokasi['nama_lokasi']); ?></option>
+            <?php } ?>
         </select><br><br>
 
         <button type="submit" name="update">Simpan</button>
