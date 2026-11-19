@@ -8,7 +8,7 @@ if (isset($_GET['cari'])) {
     $query = mysqli_query($koneksi, "SELECT barang.*, lokasi.gambar
         FROM barang
         LEFT JOIN lokasi ON barang.lokasi_ruang = lokasi.nama_lokasi
-        WHERE barang.a
+        WHERE barang.nama_barang LIKE '%$cari%'
         ");
 } else {
     $query = mysqli_query($koneksi, "SELECT barang.*, lokasi.gambar
