@@ -23,16 +23,17 @@ if (isset($_GET['cari'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Inventaris Lab & Sarpras SMK</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Sistem Inventaris Lab & Sarpras SMK</h2>
 
     <form action="" method="get">
-        <input type="text" name="cari" placeholder="Cari barang">
+        <input type="text" name="cari" placeholder="Cari barang berdasarkan nama">
         <button type="submit">Cari</button>
         <a href="index.php">Reset</a>
     </form>
-    <br><br>
+    <br>
 
     <a href="tambah.php">+ Tambah Barang</a> |
     <a href="crud_lokasi/index.php">Manajemen Lokasi Ruang</a>

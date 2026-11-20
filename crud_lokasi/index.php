@@ -9,6 +9,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM lokasi");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lokasi</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Data Lokasi</h2>
