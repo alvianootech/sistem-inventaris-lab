@@ -1,5 +1,7 @@
 
 <?php
+require_once "../auth.php";
+wajibLogin("../login.php");
 include "../koneksi.php";
 
 if (isset($_POST['simpan'])) {

@@ -1,4 +1,6 @@
 <?php
+require_once "auth.php";
+wajibLogin("login.php");
 include "koneksi.php";
 
 // fitur search
@@ -35,7 +37,8 @@ if (isset($_GET['cari'])) {
     </form>
     <br>
 
-    <a href="tambah.php">+ Tambah Barang</a> |
+    <a href="logout.php" style="color: red;" onclick="return confirm('Yakin anda ingin logout? Ini akan mengarahkan menuju halaman awal login')">Logout</a> | 
+    <a href="tambah.php">+ Tambah Barang</a> | 
     <a href="crud_lokasi/index.php">Manajemen Lokasi Ruang</a>
     <br><br>
 

@@ -1,4 +1,6 @@
 <?php
+require_once "../auth.php";
+wajibLogin("../login.php");
 include "../koneksi.php";
 $query = mysqli_query($koneksi, "SELECT * FROM lokasi");
 ?>

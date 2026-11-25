@@ -1,4 +1,6 @@
 <?php
+require_once "auth.php";
+wajibLogin("login.php");
 include "koneksi.php";
 $daftar_lokasi = mysqli_query($koneksi, "SELECT nama_lokasi FROM lokasi ORDER BY nama_lokasi");
 

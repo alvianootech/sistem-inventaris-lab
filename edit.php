@@ -1,4 +1,6 @@
 <?php
+require_once "auth.php";
+wajibLogin("login.php");
 include "koneksi.php";
 
 $id = $_GET['id'];
